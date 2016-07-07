@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MCGeoQuiz</string>
+    <string name="defaultQuestionText">Welcome! Press Next to begin</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string name="q1">Batman is the best superhero.</string> --true
+    <string name="cor1">Dang right! No super power but he\'s one fine modern gentleman.</string>
+    <string name="inc1">Um... no. Try again.</string>
+
+    <string name="q2">Oxford University is older than the Aztec Empire.</string> -- true
+    <string name="cor2">I know! Crazy right!?</string>
+    <string name="inc2">Nope! Actually it is.</string>
+
+    <string name="q3">Clint Eastwood is older than sliced bread.</string> -- false
+    <string name="cor3">Right! Clint was born in 1930. Sliced bread was introduced in 1928.</string>
+    <string name="inc3">Wrong! But Betty White is!</string>
+
+    <string name="q4">It took NASA over two decades to land on the moon.</string> -- false
+    <string name="cor4">Right. NASA was founded in 1958 and landed on the moon in 1969.</string>
+    <string name="inc4">Nope! In the span of only 63 years, we went from taking flight to landing on the moon.</string>
+
+    <string name="q5">Scotland’s national animal is the platypus.</string> -- true
+    <string name="cor5">Right! Do you know what it is?</string>
+    <string name="inc5">Nope! It\'s the unicorn! Whaaat??</string>
+
+    <string name="cheat_button">Cheat!</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show the answer.</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
+
+</resources>
