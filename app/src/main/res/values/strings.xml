@@ -29,8 +29,10 @@
     <string name="inc5">Nope! It\'s the unicorn! Whaaat??</string>
 
     <string name="cheat_button">Cheat!</string>
-    <string name="warning_text">Are you sure you want to do this?</string>
-    <string name="show_answer_button">Show the answer.</string>
-    <string name="judgment_toast">Cheating is wrong.</string>
+    <string name="warning_text">Cheating is naughty! Are you sure you want to cheat?</string>
+    <string name="show_answer_button">Be naughty!</string>
+    <string name="cancel_button">No, I\'m an angel.</string>
+    <string name="judgment_toast">You sly dog you! It\'s\: </string>
+    <string name="return_button">I'm sorry I cheated.</string>
 
 </resources>

@@ -81,6 +81,22 @@
                 android:id="@+id/false_button"
                 android:layout_weight="1" />
         </LinearLayout>
+        <ImageButton
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/cheat_button"
+            android:contentDescription="@string/cheat_button"
+            android:contextClickable="true"
+            android:src="@drawable/toad"
+            android:foregroundGravity="bottom|right"
+            android:adjustViewBounds="false"
+            android:clickable="true"
+            android:nestedScrollingEnabled="false"
+            android:scaleType="fitCenter"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="0dp"
+            android:background="#00ffffff"
+            android:paddingTop="10dp" />
 
     </LinearLayout>
 </RelativeLayout>

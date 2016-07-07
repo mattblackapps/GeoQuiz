@@ -24,4 +24,6 @@ public class TrueFalse extends java.lang.Object {
         return isTrue == mTrueQuestion ? mCorrectResponse : mIncorrectResponse;
     }
 
+    public boolean isTrue() { return mTrueQuestion; }
+
 }
