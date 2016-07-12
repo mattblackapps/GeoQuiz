@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
+
+    public static final String KEY_IS_TRUE = "com.matthewcoggin.mcgeoquiz.isTrue";
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -32,7 +36,6 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_INDEX = "mQuestionIndex";
     private static final String KEY_STARTED = "mHasStarted";
     private static final String KEY_RESPONDING = "mIsResponding";
-    private static final String KEY_IS_TRUE = "com.matthewcoggin.mcgeoquiz.isTrue";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +49,16 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionTextView = (TextView)findViewById(R.id.question_text);
         mCheatButton = (ImageButton)findViewById(R.id.cheat_button);
 
-        mQuestionIndex = savedInstanceState.getInt(KEY_INDEX, 0);
-        mHasStarted = savedInstanceState.getBoolean(KEY_STARTED, false);
-        mIsResponding = savedInstanceState.getBoolean(KEY_RESPONDING, false);
+        if ( savedInstanceState == null ) {
+            mQuestionIndex = 0;
+            mHasStarted = false;
+            mIsResponding = false;
+        } else {
+            mQuestionIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+            mHasStarted = savedInstanceState.getBoolean(KEY_STARTED, false);
+            mIsResponding = savedInstanceState.getBoolean(KEY_RESPONDING, false);
+        }
+
 
 
         mQuestions = new TrueFalse[]{
@@ -63,7 +73,12 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mHasStarted) {
-                    mQuestionTextView.setText(mQuestions[mQuestionIndex].getResponseIdFor(true));
+                    mQuestionTextView.setText("");
+                    Toast t = Toast.makeText(QuizActivity.this,
+                            mQuestions[mQuestionIndex].getResponseIdFor(true),
+                            Toast.LENGTH_LONG);
+                    t.setGravity(Gravity.CENTER, 0, 0);
+                    t.show();
                     mIsResponding = true;
                 }
             }
@@ -73,7 +88,12 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mHasStarted) {
-                    mQuestionTextView.setText(mQuestions[mQuestionIndex].getResponseIdFor(false));
+                    mQuestionTextView.setText("");
+                    Toast t = Toast.makeText(QuizActivity.this,
+                            mQuestions[mQuestionIndex].getResponseIdFor(true),
+                            Toast.LENGTH_LONG);
+                    t.setGravity(Gravity.CENTER, 0, 0);
+                    t.show();
                     mIsResponding = true;
                 }
             }
@@ -110,40 +130,7 @@ public class QuizActivity extends AppCompatActivity {
         Log.i(TAG, "onSaveInstanceState");
         savedInstanceState.putInt(KEY_INDEX, mQuestionIndex);
         savedInstanceState.putBoolean(KEY_STARTED, mHasStarted);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        Log.v(TAG, "onStart called");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.v(TAG, "onPause called");
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        Log.v(TAG, "onResume called");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        Log.v(TAG, "onStop called");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        Log.v(TAG, "onDestroy called");
+        savedInstanceState.putBoolean(KEY_RESPONDING, mIsResponding);
     }
 
 

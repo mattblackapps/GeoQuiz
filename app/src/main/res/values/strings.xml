@@ -33,6 +33,8 @@
     <string name="show_answer_button">Be naughty!</string>
     <string name="cancel_button">No, I\'m an angel.</string>
     <string name="judgment_toast">You sly dog you! It\'s\: </string>
-    <string name="return_button">I'm sorry I cheated.</string>
+    <string name="return_button">I\'m sorry I cheated.</string>
+    <string name="true_text">True</string>
+    <string name="false_text">False</string>
 
 </resources>
